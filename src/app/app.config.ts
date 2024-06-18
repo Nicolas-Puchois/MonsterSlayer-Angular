@@ -6,5 +6,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+  providers:[
+  provideRouter([]),
+  importProvidersFrom(BrowserModule, PlayerModule),
+],
 };
