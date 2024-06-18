@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './playeraction.component.css'
 })
 export class PlayeractionComponent {
-
+  attackAction(){
+    const attack: number = Math.random();
+  }
 }
