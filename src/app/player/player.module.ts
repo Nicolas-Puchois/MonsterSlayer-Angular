@@ -12,6 +12,7 @@ import { PlayerstatsComponent } from './playerstats/playerstats.component';
   ],
   exports: [
     PlayeractionComponent,
+    PlayerstatsComponent
   ]
 })
 export class PlayerModule { }
