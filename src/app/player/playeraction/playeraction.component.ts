@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class PlayeractionComponent {
   attack: number;
+  superAttack: number;
 
   constructor(public PlayerService : PlayerService){
     this.attack = this.PlayerService.randomNumber;
+    this.superAttack = this.PlayerService.randomNumber;
   }
 
 
@@ -20,5 +22,11 @@ export class PlayeractionComponent {
     this.PlayerService.randomGenerator();
     this.attack = this.PlayerService.randomNumber;
     console.log(this.attack);
+  }
+
+  superAttackAction(){
+    this.PlayerService.randomGenerator();
+    this.superAttack = this.PlayerService.randomNumber;
+    this.superAttack += 15
   }
 }
