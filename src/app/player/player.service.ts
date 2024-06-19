@@ -11,7 +11,6 @@ export class PlayerService {
   public lifeValue : number = 50;
   public healValue : number = 1;
 
-    constructor() { }
 
   getLifeValue(){
     return this.lifeValue
