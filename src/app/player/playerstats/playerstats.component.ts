@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-playerstats',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './playerstats.component.css'
 })
 export class PlayerstatsComponent {
-  life : number = 100;
+  life : number ;
+
+  constructor(public PlayerService : PlayerService){
+    this.updateLifeValue();  
+    this.life = this.PlayerService.lifeValue
+  }
+
+  updateLifeValue(){
+   return this.life = this.PlayerService.getLifeValue();
+  }
 }
