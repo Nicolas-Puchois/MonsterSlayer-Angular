@@ -35,4 +35,8 @@ export class PlayeractionComponent {
   healAction(){
 
   }
+
+  giveUpAction(){
+    
+  }
 }
