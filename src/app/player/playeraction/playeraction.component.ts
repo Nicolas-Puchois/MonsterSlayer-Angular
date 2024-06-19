@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlayerService } from '../player.service';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-playeraction',
@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 export class PlayeractionComponent {
   attack: number;
   superAttack: number;
-  healValue : number;
+  lifeValue : number;
 
   constructor(public PlayerService : PlayerService){
     this.attack = this.PlayerService.randomNumber;
     this.superAttack = this.PlayerService.randomNumber;
-    this.healValue = this.PlayerService.randomNumber;
+    this.lifeValue = this.PlayerService.lifeValue;
   }
 
 
@@ -23,7 +23,6 @@ export class PlayeractionComponent {
   attackAction(){
     this.PlayerService.randomGenerator();
     this.attack = this.PlayerService.randomNumber;
-    console.log(this.attack);
   }
 
   superAttackAction(){
@@ -33,7 +32,9 @@ export class PlayeractionComponent {
   }
 
   healAction(){
-
+    if(this.lifeValue < 100){
+      this.PlayerService.healAction();
+    }
   }
 
 }
