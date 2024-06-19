@@ -32,9 +32,11 @@ export class PlayeractionComponent {
   }
 
   healAction(){
-    if(this.lifeValue < 100){
       this.PlayerService.healAction();
     }
-  }
 
+    giveUpAction(){
+      this.PlayerService.giveupAction();
+      alert("you surrender")
+    }
 }
