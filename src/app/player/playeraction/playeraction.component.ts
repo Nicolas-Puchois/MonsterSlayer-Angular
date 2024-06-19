@@ -36,7 +36,4 @@ export class PlayeractionComponent {
 
   }
 
-  giveUpAction(){
-    
-  }
 }
