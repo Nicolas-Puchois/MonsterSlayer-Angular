@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MonsterService {
-  lifeValue : number = 100;
+  lifevalue : number = 100;
   damagetaken: number = 1;
   randomNumber: number = 1;
   min : number = 1;
@@ -17,12 +17,12 @@ export class MonsterService {
  }
 
   getLifeValue(){
-    return this.lifeValue
+    return this.lifevalue
   }
 
   damagetoLife(){
-    this.lifeValue -= this.damagetaken;
-    return this.lifeValue
+    this.lifevalue -= this.damagetaken;
+    return this.lifevalue
   }
 
   attackAction(){
