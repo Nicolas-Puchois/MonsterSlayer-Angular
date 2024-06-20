@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MonsterService } from '../../services/monster.service';
 
 @Component({
   selector: 'app-monsteraction',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './monsteraction.component.css'
 })
 export class MonsteractionComponent {
+
+  constructor(public MonsterService: MonsterService) {
+    this.MonsterService.getLifeValue();
+  }
 
 }
