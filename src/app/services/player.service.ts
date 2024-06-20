@@ -27,7 +27,5 @@ export class PlayerService {
     return this.lifevalue;
   }
 
-  giveupAction() {
-    this.lifevalue = 100;
-  }
+
 }
