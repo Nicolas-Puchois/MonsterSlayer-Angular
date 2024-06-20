@@ -10,7 +10,7 @@ export class PlayerService {
   public max : number = 20;
   public lifeValue : number = 50;
   public healValue : number = 1;
-
+  public attackValue: number = 0;
 
   getLifeValue(){
     return this.lifeValue
@@ -19,6 +19,12 @@ export class PlayerService {
   randomGenerator(){
      this.randomNumber = Math.floor(Math.random()*(this.max - this.min + 1));
      return this.randomNumber
+  }
+
+  attackAction(){
+    this.randomGenerator();
+    this.attackValue = this.randomNumber;
+    return this.attackValue;
   }
 
   healAction(){
