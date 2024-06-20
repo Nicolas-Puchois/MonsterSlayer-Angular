@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PlayerService } from '../../services/player.service';
 import { CombatsService } from '../../services/combats.service';
 import { MonsterService } from '../../services/monster.service';
+import { ResetService } from '../../services/reset.service';
 
 @Component({
   selector: 'app-playeraction',
@@ -16,7 +17,8 @@ export class PlayeractionComponent {
   constructor(
     public PlayerService: PlayerService,
     public MonsterService: MonsterService,
-    public CombatsService: CombatsService
+    public CombatsService: CombatsService,
+    public ResetService: ResetService
   ) {
     this.lifeValue = this.PlayerService.lifevalue;
     this.attack = this.CombatsService.attackvalue;
@@ -36,14 +38,20 @@ export class PlayeractionComponent {
     this.superAttack = this.CombatsService.superattackvalue;
     this.MonsterService.damagetaken = this.superAttack;
     this.MonsterService.damagetoLife();
+    this.CombatsService.monsterCounterAttack();
+    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;  
   }
 
   healAction() {
     this.PlayerService.healAction();
+    this.CombatsService.monsterCounterAttack();
+    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;  
   }
 
   giveUpAction() {
-    this.PlayerService.giveupAction();
+    this.ResetService.giveupAction();
+    this.MonsterService.lifevalue = this.ResetService.lifemonster
+    this.PlayerService.lifevalue = this.ResetService.lifeplayer
     alert('you surrender');
   }
 }
