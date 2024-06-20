@@ -11,6 +11,7 @@ export class PlayerService {
   public lifeValue : number = 50;
   public healValue : number = 1;
   public attackValue: number = 0;
+  public superAttackValue: number = 0;
 
   getLifeValue(){
     return this.lifeValue
@@ -25,6 +26,13 @@ export class PlayerService {
     this.randomGenerator();
     this.attackValue = this.randomNumber;
     return this.attackValue;
+  }
+
+  superAttackAction(){
+    this.randomGenerator();
+    this.superAttackValue = this.randomNumber;
+    this.superAttackValue += 15;
+    return this.superAttackValue;
   }
 
   healAction(){
