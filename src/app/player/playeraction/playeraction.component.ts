@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PlayerService } from '../../services/player.service';
+import { CombatsService } from '../../services/combats.service';
 import { MonsterService } from '../../services/monster.service';
 
 @Component({
@@ -14,22 +15,23 @@ export class PlayeractionComponent {
 
   constructor(
     public PlayerService: PlayerService,
-    public MonsterService: MonsterService
+    public MonsterService: MonsterService,
+    public CombatsService: CombatsService
   ) {
     this.lifeValue = this.PlayerService.lifevalue;
-    this.attack = this.PlayerService.attackvalue;
+    this.attack = this.CombatsService.attackvalue;
   }
 
   attackAction() {
-    this.PlayerService.attackAction();
-    this.attack = this.PlayerService.attackvalue;
+    this.CombatsService.attackAction();
+    this.attack = this.CombatsService.attackvalue;
     this.MonsterService.damagetaken = this.attack;
     this.MonsterService.damagetoLife();
   }
 
   superAttackAction() {
-    this.PlayerService.superAttackAction();
-    this.superAttack = this.PlayerService.superattackvalue;
+    this.CombatsService.superAttackAction();
+    this.superAttack = this.CombatsService.superattackvalue;
     this.MonsterService.damagetaken = this.superAttack;
     this.MonsterService.damagetoLife();
   }
