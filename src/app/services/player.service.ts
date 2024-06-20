@@ -6,46 +6,46 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PlayerService {
-  public randomNumber: number = 1;
-  public min : number = 1;
-  public max : number = 20;
-  public lifeValue : number = 50;
-  public healValue : number = 1;
-  public attackValue: number = 0;
-  public superAttackValue: number = 0;
+  randomnumber: number = 1;
+  min : number = 1;
+  max : number = 20;
+  lifevalue : number = 50;
+  healvalue : number = 1;
+  attackvalue: number = 0;
+  superattackvalue: number = 0;
 
 
   getLifeValue(){
-    return this.lifeValue
+    return this.lifevalue
   }
 
   randomGenerator(){
-     this.randomNumber = Math.floor(Math.random()*(this.max - this.min + 1));
-     return this.randomNumber
+     this.randomnumber = Math.floor(Math.random()*(this.max - this.min + 1));
+     return this.randomnumber
   }
 
   attackAction(){
     this.randomGenerator();
-    this.attackValue = this.randomNumber;
-    return this.attackValue;
+    this.attackvalue = this.randomnumber;
+    return this.attackvalue;
   }
 
   superAttackAction(){
     this.randomGenerator();
-    this.superAttackValue = this.randomNumber;
-    this.superAttackValue += 15;
-    return this.superAttackValue;
+    this.superattackvalue = this.randomnumber;
+    this.superattackvalue += 15;
+    return this.superattackvalue;
   }
 
   healAction(){
     this.randomGenerator();
-    this.healValue = this.randomNumber;
-    this.lifeValue = Math.min(this.lifeValue + this.healValue, 100);    
-    return this.lifeValue
+    this.healvalue = this.randomnumber;
+    this.lifevalue = Math.min(this.lifevalue + this.healvalue, 100);    
+    return this.lifevalue
   }
 
   giveupAction(){
-    this.lifeValue = 100;
+    this.lifevalue = 100;
   }
 
 }
