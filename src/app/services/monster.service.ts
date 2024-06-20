@@ -4,17 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MonsterService {
-  public lifeValue : number = 100;
-  public damagetaken: number = 1;
-  public randomNumber: number = 1;
-  public min : number = 1;
-  public max : number = 20;
+  lifeValue : number = 100;
+  damagetaken: number = 1;
+  randomNumber: number = 1;
+  min : number = 1;
+  max : number = 20;
+  attackvalue: number = 0;
 
   randomGenerator(){
     this.randomNumber = Math.floor(Math.random()*(this.max - this.min + 1));
     return this.randomNumber
  }
- 
+
   getLifeValue(){
     return this.lifeValue
   }
@@ -22,5 +23,11 @@ export class MonsterService {
   damagetoLife(){
     this.lifeValue -= this.damagetaken;
     return this.lifeValue
+  }
+
+  attackAction(){
+    this.randomGenerator();
+    this.attackvalue = this.randomNumber;
+    return this.attackvalue;
   }
 }
