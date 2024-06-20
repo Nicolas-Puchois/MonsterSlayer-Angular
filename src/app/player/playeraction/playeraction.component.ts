@@ -22,9 +22,8 @@ export class PlayeractionComponent {
   }
 
   superAttackAction() {
-    this.PlayerService.attackAction();
-    this.superAttack = this.PlayerService.attackValue
-    this.superAttack += 15;
+    this.PlayerService.superAttackAction();
+    this.superAttack = this.PlayerService.superAttackValue
   }
 
   healAction() {
