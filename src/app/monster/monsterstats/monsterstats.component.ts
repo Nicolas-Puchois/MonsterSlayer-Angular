@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { MonsterModule } from '../monster.module';
-import { PlayerModule } from '../../player/player.module';
+import { MonsterService } from '../monster.service';
 
 @Component({
   selector: 'app-monsterstats',
@@ -9,7 +8,10 @@ import { PlayerModule } from '../../player/player.module';
 })
 export class MonsterstatsComponent {
  damage : number = 0;
- 
- constructor(public MonsterModule : MonsterModule, public PlayerModule: PlayerModule){}
+
+
+ constructor(public MonsterService : MonsterService){
+  this.MonsterService.getLifeValue();
+ }
 
 }
