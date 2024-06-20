@@ -11,7 +11,7 @@ export class PlayerstatsComponent {
 
   constructor(public PlayerService : PlayerService){
     this.updateLifeValue();  
-    this.life = this.PlayerService.lifeValue
+    this.life = this.PlayerService.lifevalue
   }
 
   updateLifeValue(){

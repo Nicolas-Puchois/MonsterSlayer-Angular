@@ -13,20 +13,20 @@ export class PlayeractionComponent {
   superAttack: number = 0;
 
   constructor(public PlayerService: PlayerService, public MonsterService: MonsterService) {
-    this.lifeValue = this.PlayerService.lifeValue;
-    this.attack = this.PlayerService.attackValue;
+    this.lifeValue = this.PlayerService.lifevalue;
+    this.attack = this.PlayerService.attackvalue;
   }
 
   attackAction() {
     this.PlayerService.attackAction();
-    this.attack = this.PlayerService.attackValue;
+    this.attack = this.PlayerService.attackvalue;
     this.MonsterService.damagetaken = this.attack;
     this.MonsterService.damagetoLife();
   }
 
   superAttackAction() {
     this.PlayerService.superAttackAction();
-    this.superAttack = this.PlayerService.superAttackValue
+    this.superAttack = this.PlayerService.superattackvalue
     this.MonsterService.damagetaken = this.superAttack;
     this.MonsterService.damagetoLife();
 
