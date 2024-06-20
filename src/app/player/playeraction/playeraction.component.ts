@@ -12,7 +12,10 @@ export class PlayeractionComponent {
   lifeValue: number;
   superAttack: number = 0;
 
-  constructor(public PlayerService: PlayerService, public MonsterService: MonsterService) {
+  constructor(
+    public PlayerService: PlayerService,
+    public MonsterService: MonsterService
+  ) {
     this.lifeValue = this.PlayerService.lifevalue;
     this.attack = this.PlayerService.attackvalue;
   }
@@ -26,10 +29,9 @@ export class PlayeractionComponent {
 
   superAttackAction() {
     this.PlayerService.superAttackAction();
-    this.superAttack = this.PlayerService.superattackvalue
+    this.superAttack = this.PlayerService.superattackvalue;
     this.MonsterService.damagetaken = this.superAttack;
     this.MonsterService.damagetoLife();
-
   }
 
   healAction() {
