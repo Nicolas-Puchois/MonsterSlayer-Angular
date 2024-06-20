@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MonsterService } from '../monster.service';
+import { MonsterService } from '../../services/monster.service';
 
 @Component({
   selector: 'app-monsterstats',
