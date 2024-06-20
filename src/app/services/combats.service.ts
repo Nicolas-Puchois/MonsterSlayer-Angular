@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CombatsService {
   attackvalue: number = 0;
+  monsterattackvalue: number = 0;
   superattackvalue: number = 0;
   randomnumber: number = 1;
   min: number = 1;
@@ -30,7 +31,7 @@ export class CombatsService {
 
   monsterCounterAttack(){
     this.randomGenerator()
-    this.attackvalue = this.randomnumber;
-    return this.attackvalue;
+    this.monsterattackvalue = this.randomnumber;
+    return this.monsterattackvalue;
   }
 }
