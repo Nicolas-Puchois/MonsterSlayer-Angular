@@ -27,6 +27,8 @@ export class PlayeractionComponent {
   superAttackAction() {
     this.PlayerService.superAttackAction();
     this.superAttack = this.PlayerService.superAttackValue
+    this.MonsterService.damagetaken = this.superAttack;
+    this.MonsterService.damagetoLife();
 
   }
 
