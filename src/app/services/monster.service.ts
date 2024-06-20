@@ -22,6 +22,7 @@ export class MonsterService {
 
   damagetoLife() {
     this.lifevalue -= this.damagetaken;
+    this.attackAction();
     return this.lifevalue;
   }
 
