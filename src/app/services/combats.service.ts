@@ -27,4 +27,10 @@ export class CombatsService {
     this.superattackvalue += 15;
     return this.superattackvalue;
   }
+
+  monsterCounterAttack(){
+    this.randomGenerator()
+    this.attackvalue = this.randomnumber;
+    return this.attackvalue;
+  }
 }
