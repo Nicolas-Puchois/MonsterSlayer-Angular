@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class PlayerService {
-  lifevalue: number = 50;
+  lifevalue: number = 100;
   healvalue: number = 1;
 
   randomnumber: number = 1;
