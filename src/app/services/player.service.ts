@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,7 @@ export class PlayerService {
   public healValue : number = 1;
   public attackValue: number = 0;
   public superAttackValue: number = 0;
+
 
   getLifeValue(){
     return this.lifeValue
