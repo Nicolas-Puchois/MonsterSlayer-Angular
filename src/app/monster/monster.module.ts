@@ -10,13 +10,9 @@ import { MonsterstatsComponent } from './monsterstats/monsterstats.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    MonsterstatsComponent
   ]
 })
-export class MonsterModule { 
-
-  public lifeValue : number = 50;
-
-  getLifeValue(){
-    return this.lifeValue
-  }
-}
+export class MonsterModule { }

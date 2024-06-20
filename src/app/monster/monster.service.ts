@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MonsterService {
-
+  public lifeValue : number = 10;
   constructor() { }
+
+  getLifeValue(){
+    return this.lifeValue
+  }
 }
