@@ -32,6 +32,6 @@ export class CombatsService {
   monsterCounterAttack(){
     this.randomGenerator()
     this.monsterattackvalue = this.randomnumber;
-    return this.monsterattackvalue;
+    return this.attackvalue;
   }
 }
