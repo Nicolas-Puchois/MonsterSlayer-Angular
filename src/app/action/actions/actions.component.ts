@@ -10,9 +10,10 @@ import { ResetService } from '../../services/reset.service';
   styleUrl: './actions.component.css'
 })
 export class ActionsComponent {
-  attack: number;
+  attackValue: number;
   lifeValue: number;
-  superAttack: number = 0;
+  superAttackValue: number = 0;
+  
 
   constructor(
     public PlayerService: PlayerService,
@@ -21,37 +22,38 @@ export class ActionsComponent {
     public ResetService: ResetService
   ) {
     this.lifeValue = this.PlayerService.lifevalue;
-    this.attack = this.CombatsService.attackvalue;
+    this.attackValue = this.CombatsService.attackvalue;
   }
+
+  
 
   attackAction() {
     this.CombatsService.attackAction();
-    this.attack = this.CombatsService.attackvalue;
-    this.MonsterService.damagetaken = this.attack;
     this.MonsterService.damagetoLife();
     this.CombatsService.monsterCounterAttack();
-    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;    
+    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;
+    this.ResetService.checkWinner()
   }
 
   superAttackAction() {
     this.CombatsService.superAttackAction();
-    this.superAttack = this.CombatsService.superattackvalue;
-    this.MonsterService.damagetaken = this.superAttack;
     this.MonsterService.damagetoLife();
     this.CombatsService.monsterCounterAttack();
-    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;  
+    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;
+    this.ResetService.checkWinner()
   }
 
   healAction() {
     this.PlayerService.healAction();
     this.CombatsService.monsterCounterAttack();
-    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;  
+    this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;
+    this.ResetService.checkWinner() 
   }
 
+
+
   giveUpAction() {
-    this.ResetService.giveupAction();
-    this.MonsterService.lifevalue = this.ResetService.lifemonster
-    this.PlayerService.lifevalue = this.ResetService.lifeplayer
+    this.ResetService.resetAction();
     alert('you surrender');
   }
 }
