@@ -37,7 +37,7 @@ export class ActionsComponent {
 
   superAttackAction() {
     this.CombatsService.superAttackAction();
-    this.MonsterService.damagetoLife();
+    this.MonsterService.superDamagetolife();
     this.CombatsService.monsterCounterAttack();
     this.PlayerService.lifevalue -= this.CombatsService.monsterattackvalue;
     this.ResetService.checkWinner()
