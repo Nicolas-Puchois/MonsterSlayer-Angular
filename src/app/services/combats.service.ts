@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LogsService } from './logs.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,9 @@ export class CombatsService {
   min: number = 1;
   max: number = 20;
 
+  constructor(public LogsService: LogsService){}
+
+
   randomGenerator() {
     this.randomnumber = Math.floor(Math.random() * (this.max - this.min + 1));
     return this.randomnumber;
@@ -19,19 +23,22 @@ export class CombatsService {
   attackAction() {
     this.randomGenerator();
     this.attackvalue = this.randomnumber;
+    this.LogsService.log(`Vous Avez infliger ${this.attackvalue} dégats`);
     return this.attackvalue;
   }
 
   superAttackAction() {
     this.randomGenerator();
     this.superattackvalue = this.randomnumber;
-    this.superattackvalue += 15;
+    this.superattackvalue *= 2;
+    this.LogsService.log(`Vous Avez infliger ${this.superattackvalue} dégats`);
     return this.superattackvalue;
   }
 
   monsterCounterAttack(){
     this.randomGenerator()
     this.monsterattackvalue = this.randomnumber;
+    this.LogsService.log(`Le monstre vous a infliger ${this.monsterattackvalue} dégats`);
     return this.attackvalue;
   }
 }
