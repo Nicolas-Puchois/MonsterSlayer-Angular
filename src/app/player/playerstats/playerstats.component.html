@@ -1,5 +1,5 @@
 <section>
-    <h2>Player</h2>
-    life : <progress value={{this.PlayerService.getLifeValue()}} max="100"></progress>
-    {{ this.PlayerService.getLifeValue() }}
+    <h2 class="player">Player</h2>
+     <progress value={{this.PlayerService.getLifeValue()}} max="100" class="player playerhealth"></progress>
+    <h3>{{ this.PlayerService.getLifeValue() }}</h3>
 </section>
