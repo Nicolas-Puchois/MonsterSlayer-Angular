@@ -1,1 +1,5 @@
-<p>monsterstats works!</p>
+<section>
+    <h2 class="monster">Monster</h2>
+    <progress value={{this.MonsterService.getLifeValue()}} max="100" class="monster monsterhealth"></progress>
+    <h3>{{ this.MonsterService.getLifeValue() }}</h3>
+</section>

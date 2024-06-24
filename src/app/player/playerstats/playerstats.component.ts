@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import { PlayerService } from '../player.service';
+import { PlayerService } from '../../services/player.service';
 
 @Component({
   selector: 'app-playerstats',
   templateUrl: './playerstats.component.html',
-  styleUrl: './playerstats.component.css'
+  styleUrl: './playerstats.component.css',
 })
 export class PlayerstatsComponent {
-  life : number ;
+  life: number;
 
-  constructor(public PlayerService : PlayerService){
-    this.updateLifeValue();  
-    this.life = this.PlayerService.lifeValue
+  constructor(public PlayerService: PlayerService) {
+    this.updateLifeValue();
+    this.life = this.PlayerService.lifevalue;
   }
 
-  updateLifeValue(){
-   return this.life = this.PlayerService.getLifeValue();
+  updateLifeValue() {
+    return (this.life = this.PlayerService.getLifeValue());
   }
 }

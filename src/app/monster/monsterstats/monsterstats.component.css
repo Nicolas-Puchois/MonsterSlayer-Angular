@@ -1,0 +1,23 @@
+.monster{
+    color:indigo;
+}
+
+progress{
+    width: 200px;
+    height: 25px;
+    border-color: black;
+    background-color: brown;
+    border-radius: 10px;
+}
+
+.monsterhealth{
+    justify-content: flex-start;
+}
+
+progress::-moz-progress-bar{
+    background-color: indigo;
+}
+
+progress::-webkit-progress-value {
+    background-color: indigo;
+ }

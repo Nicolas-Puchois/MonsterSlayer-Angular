@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MonsterstatsComponent } from './monsterstats/monsterstats.component';
+import { LogsComponent } from './logs/logs.component';
 
 
 
 @NgModule({
   declarations: [
-    MonsterstatsComponent
+    LogsComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    MonsterstatsComponent
+    LogsComponent
   ]
 })
-export class MonsterModule { }
+export class LogModule { }
